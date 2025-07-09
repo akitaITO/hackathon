@@ -1,0 +1,72 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+body {
+    /* 세련된 느낌을 주는 그라데이션 배경을 추가합니다. */
+    background: linear-gradient(45deg, #10356C, #1E5EB3, #2E73A5, #1E5EB3, #10356C);
+    background-size: 800% 800%;
+    /* 배경색이 부드럽게 움직이는 애니메이션 효과를 적용합니다. */
+    animation: gradientBG 15s ease infinite;
+    color: white; /* 기본 글자색을 흰색으로 설정 */
+    /* 'background' 속성 전체에 전환 효과를 적용하여 그라데이션에서 단색으로 부드럽게 변경되도록 합니다. */
+    transition: background 1s ease;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 콘텐츠를 수직 및 수평 중앙에 정렬합니다. */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+
+.start-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #10356C;
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.5s ease;
+
+    /* 서브 타이틀 다음에 나타나도록 애니메이션 지연시간 설정 */
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 1.0s;
+}
+
+.start-button:hover {
+    color: #e3e3e3;
+    background-color: #10356C;
+    transform: scale(1.05); /* 살짝 커지는 효과 */
+}
+
+/* fadeIn 애니메이션 정의 */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+#mainTitle {
+    font-size: 3rem; /* 폰트 크기를 늘립니다. */
+    font-weight: 600;
+    /* 텍스트에 그림자 효과를 주어 입체감을 더합니다. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
